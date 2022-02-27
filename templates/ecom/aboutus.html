@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>KEN COMPUTERS</title>
+
+  
+  <style media="screen">
+    .footer{
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body style="background-color: #B3E5FC;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+  <h3 style="text-align:center;font-weight: bold;">Ken Computers,your Partner in Technology</h3>
+  <article style="font-size:25px;">
+  <h3 style="text-align:center;font-weight: bold;">Items Available</h3>
+  <p>We deal in a variety of technological hardware such as computers and their accessories, CCTV equipment, Printers, and other Computer Systems.</p>
+</article>
+<br><br>
+
+<article style="font-size:25px;">
+  <h3 style="text-align:center;font-weight: bold;">After Sales Services</h3>
+  <p>We offer assistance in installations, Customer Support, Trainings and other After sales services.</p>
+</article>
+<br><br>
+
+<article style="font-size:25px;">
+  <h3 style="text-align:center;font-weight: bold;">Access Options</h3>
+  <p>You can visit our shop to checkout our catalog or order for delivery counrtywide.</p>
+</article>
+<br><br>
+
+ <address style="text-align:center;font-size:25px;">
+Written by <a href="mailto:Info@kencomputers.co.ke">KEN COMPUTERS</a>.<br>
+Contact us on:<br>
++254720 741 753<br>
+Opposite Phd, Msanifu Kombo Rd,Mombasa<br>
+KENYA
+</address> 
+<br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+
+
+</html>
