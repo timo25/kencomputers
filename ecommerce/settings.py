@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-from decouple import config
-import dj_database_url
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,11 +22,11 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
+from decouple import config
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = '#vw(03o=(9kbvg!&2d5i!2$_58x@_-3l4wujpow6(ym37jxnza'
-SECRET_KEY = os.environ.get('SECRET_KEY')
 
+SECRET_KEY='ertwttwuuwtttwyywrrwrrwt%$#jjshhsgsg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -91,12 +91,21 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
   #  }
     
 #}
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'kencomputers',
+        'USER': "",
+        
+    }
 }
+
+
+#DATABASES = {
+   # 'default': dj_database_url.config(
+   #     default=config('DATABASE_URL')
+   # )
+#}
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
@@ -167,3 +176,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import django_on_heroku
 django_on_heroku.settings(locals())
+
